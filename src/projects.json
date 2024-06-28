@@ -1,0 +1,19 @@
+{
+    "projects":[
+        {
+            "name": "Project 1", 
+            "date": "June 28 2024", 
+            "description": "Sample project"
+        }, 
+        {
+            "name": "Project 2", 
+            "date": "May 27 2024", 
+            "description": "Another project"
+        },
+        {
+            "name": "Project 3",
+            "date": "January 5 2023", 
+            "description": "fake project"
+        },{},{}
+    ]    
+}

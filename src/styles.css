@@ -1,0 +1,181 @@
+/*
+Global style variables
+*/
+:root{
+    --bg: rgb(15, 15, 15); 
+    --primaryColor: black; 
+    --secondaryColor: rgb(0, 161, 0);
+    --secondaryShade:rgb(0, 88, 0);
+    --altColor: white; 
+    --accentColor: rgb(77, 77, 77); 
+
+    --navHeight: 50px; 
+    --sideBarWidth: 200px;
+    
+    --borderSize: 2px; 
+    
+}
+*{
+    box-sizing: border-box;
+    border-width: var(--borderSize);
+    border-color: var(--accentColor);
+}
+body{
+    background-color: var(--bg); 
+    color: var(--altColor); 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+a{
+    font-size: 20px;
+    padding: 10px; 
+}
+
+/*
+Navigation bar styles
+*/
+.NavHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+
+    width: 100vw; 
+    height: var(--navHeight);
+    
+    text-align: center;
+    position:fixed; 
+    overflow: hidden;
+    z-index: 1;
+    top:0;
+    left:0; 
+
+    border-bottom: var(--borderSize) var(--accentColor) solid;
+
+    background-color: var(--primaryColor);
+    
+}
+.left,.right{
+    flex:1;
+    display: flex;
+}
+
+.left{justify-content: left;}
+.right{justify-content: right;}
+
+.logo, .links{
+    font-size: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width:fit-content;
+}
+
+a{
+    font-size: 20px;
+    text-decoration: none;
+}
+a:link{color:var(--altColor)}
+a:visited{color:var(--altColor)}
+a:hover{color:var(--secondaryColor)}
+a:active{color:var(--secondaryShade)}
+
+/*
+Side bar styles
+*/
+.sidebar{
+    background-color: var(--bg);
+
+    position: fixed;
+    height: 100vh; 
+    top: var(--navHeight);
+    left:0;
+    width: var(--sideBarWidth); 
+    
+    overflow-x: hidden; 
+
+    text-align: center;
+
+    border-right: var(--borderSize) var(--accentColor) solid;
+    
+}
+
+/*
+Main content section
+*/
+.main{
+    position:fixed; 
+    left: var(--sideBarWidth); 
+    top: var(--navHeight); 
+    width: calc(100% - var(--sideBarWidth));
+    height:100%; 
+
+
+    overflow-y:scroll;
+}
+
+.mainContent{
+    padding: 50px; 
+}
+
+
+/*
+About Me section
+*/
+.about{
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+
+    margin-bottom: 20px;
+    padding: 10px; 
+    border-radius: 10px;
+
+    color: var(--altColor); 
+    background-color: var(--primaryColor);
+}
+
+.aboutTitle{
+    font-size: 30px;
+}
+.aboutContent{
+   margin-top: 10px;
+}
+
+/*
+Projects section
+*/
+.projectGallery{
+    display: flex; 
+    overflow-x: auto;
+
+    background-color: var(--primaryColor);
+
+    border-style: solid;
+}
+
+.project{
+    margin:15px; 
+    padding: 10px;
+    min-width:400px;
+    height: 300px;
+
+    background-color: var(--bg);
+
+    border-style: solid;
+    border-color: var(--altColor);
+}
+
+/*
+footer 
+*/
+footer{
+    background-color: var(--bg);
+    min-height: 200px;
+}
+
+.footerLine{
+    position: absolute; 
+    border-top: var(--accentColor) var(--borderSize) solid;
+
+    left: 50px; 
+    right: 50px;
+}

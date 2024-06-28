@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+//Importing my components
+import NavHeader from "./Components/NavHeader";
+import About from "./Components/About";
+import Sidebar from "./Components/Sidebar";
+import Project from "./Components/Project";
+import { ProjectGallery } from "./Components/Project";
+import Foot from "./Components/Foot";
+
+const projects = require("./projects.json").projects;
+
+function Main({ children }) {
+  return <div className="main">{children}</div>;
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/*Nav bar and side bar*/}
+      <NavHeader />
+      <Sidebar />
+
+      {/*Main content section wrapper*/}
+      <Main>
+        {/*The reasonn "mainContent" isn't a part of the Main component is so the footer doesnt contain the "main" styling*/}
+        <div className="mainContent">
+          <About />
+          <ProjectGallery>
+            {projects.map((project) => {
+              return (
+                <Project
+                  name={project.name}
+                  date={project.date}
+                  description={project.description}
+                />
+              );
+            })}
+          </ProjectGallery>
+        </div>
+        
+        //footer
+        <Foot />
+      </Main>
     </div>
   );
 }
