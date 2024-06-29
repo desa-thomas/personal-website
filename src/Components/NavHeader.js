@@ -36,9 +36,13 @@ function NavIcons() {
 function SocialLinks(){
   return (<div className="right">
     <div className="links">
-      <a href="https://www.github.com/desa-thomas">Github</a>
+      <LinkTo url="https://www.github.com/desa-thomas" name="Github"/>
       <a>LinkedIn</a>
       <a>Instagram</a>
     </div>
   </div>)
+}
+
+function LinkTo({url, name}){
+  return <a href={url} target="_blank">{name}</a>
 }

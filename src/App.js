@@ -36,8 +36,6 @@ function App() {
             })}
           </ProjectGallery>
         </div>
-        
-        //footer
         <Foot />
       </Main>
     </div>
